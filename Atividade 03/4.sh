@@ -1,8 +1,8 @@
 #!/bin/bash
 
-a1=$(cat $1 | wc -l)
-a2=$(cat $2 | wc -l)
-a3=$(cat $3 | wc -l)
+a1=$(ls $1 | wc -l)
+a2=$(ls $2 | wc -l)
+a3=$(ls $3 | wc -l)
 
 ((${a1} > ${a2})) && ((${a2} > ${a3})) && echo "$1, $2 e $3" && exit 0 
 ((${a1} > ${a3})) && ((${a3} > ${a2})) && echo "$1, $3 e $2" && exit 0
