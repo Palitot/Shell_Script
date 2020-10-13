@@ -9,3 +9,6 @@ for file0 in *; do
 		fi
 	done
 done
+
+
+
