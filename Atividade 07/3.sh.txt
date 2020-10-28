@@ -1,0 +1,23 @@
+
+#!/bin/bash
+echo -e "q - sair\nd - listar diretórios\nf - listar arquivos\nv - mostrar o contéudo do arquivo\ncd - mudar de diretório"
+
+while true; do
+	read -p "Digite uma opção: " condi
+	case $condi in
+		"q")echo -e "Até breve!"
+	    	    break
+	    	    ;;
+		"d")ls -d */
+	    	    ;;
+	 	"f")ls -F | grep -v '/'
+	    	    ;;
+		"v")read -p "Digite o arquivo que será exibido: " arq
+	    	    cat $arq
+	    	    ;;
+		"cd")read -p "Digite o diretório que deseja ir: " dir
+	     	     cd $dir
+	     	     ;;
+		*)echo "Opção inválida";;
+		esac
+done

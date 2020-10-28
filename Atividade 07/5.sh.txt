@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while read -r linha; do
+	ping -c 4 $linha &> /dev/null
+	if [ $? -eq 0 ]; then
+		echo -e "IP $linha é acessível"
+	else
+		echo -e "IP $linha é inacessível"
+	fi
+done < "ips.txt"

@@ -1,0 +1,3 @@
+#!/bin/bash
+echo -e "o while executa um cojunto de comandos enquanto a condição for verdadeira"
+echo -e "o until executa um cojunto de comandos até que a condição seja verdadeira"

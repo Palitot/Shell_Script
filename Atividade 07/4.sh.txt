@@ -1,0 +1,16 @@
+  
+#!/bin/bash
+
+read -p "Digite o nome do arquivo: " arq
+count=0
+letra=0
+num=0
+while [ $count != $(wc -l $arq | cut -f1 -d ' ') ]; do
+	count=$(( $count + 1 ))
+	teste=$(sed -n "$count"p $arq)
+	[[ $teste =~ ^([A-Za-z]+)$ ]] && letra=$(( $letra + 1 ))
+	[[ $teste = ?(+|-)+([0-9]) ]] && num=$(( $num + 1 ))
+	
+done
+echo "Total de linhas que tem somente letras:" $letras
+echo "Total de linhas que tem somente números:" $num

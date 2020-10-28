@@ -1,0 +1,39 @@
+#!/bin/bash
+	read -p "Digite uma opção: " parametro
+	case $parametro in
+		"logica")echo -e "-gt\n-ge\n-lt\nle\n-eq\n==\n!=\n-z\n-n\n-d\n-e\n-f";;
+		"string")echo "test 'palavra' == 'palavra', verifica se a string é igual a outro."
+			 echo "test 'palavra' != 'errado', verifica se a string é diferente que a outra."
+			 echo "test -z 'palavra', verifica se a string é vazia."
+			 echo "test -n 'palavra', verifica se a string existe e se não é vazia."
+			 ;;
+		"aritmetica")echo "test 10 -gt 5, verifica se um valor é maior que o outro."
+			     echo "test 5 -ge 5, verifica se um valor é maior ou igual que o outro."
+			     echo "test 2 -lt 7, verifica se um valor é menor que o outro."
+			     echo "test 10 -le 10, verifica se um valor é menor ou igual a outro."
+			     echo "test 1 -eq 1, verifica se um valor é igual a outro."
+			     ;;
+		"variavel")echo "test -z $variavel, verifica se a variável é vazia."
+			   echo "test -n $variavel, verifica se a variável não é vazia."
+			   echo "test $a -gt $b , verifica se uma variável é maior que a outra."
+			   echo "test $a -ge $b , verifica se uma variável é maior ou igual que a outra."
+			   echo "test $a -lt $b , verifica se uma variável é menor que a outra."
+			   echo "test $a -le $b , verifica se uma variável é menor ou igual que a outra."
+			   echo "test $a -eq $b , verifica se uma variável(se os dois forem inteiros) é maior que a outra."
+			   echo "test $a == $b, verifica se as variáveis são iguais(so se forem strings."
+			   echo "test $a != $b, verifica se as variáveis são diferente."
+			   ;;
+		"arquivos")echo "test -d arquivo, verifica se o arquivo existe e é um diretório"
+			   echo "test -e arquivo, verifica se o arquivo existe"
+			   echo "test -f arquivo, verifica se o arquivo existe e é um arquivo comum"
+			   echo "test -x arquivo, verifica se o arquivo existe e é executável"
+			   echo "test -L arquivo, verifica se o arquivo existe e é um link simbólico"
+			   ;;
+		"extended")echo "[[expressão]]"
+			   echo "retorna o valor de 0 ou 1 dependendo da condição da expressão"
+		           echo "os operadores == e =! são usados, e a string do lado direito pode ser igual considerando as regras estabelecidas"
+			   echo "em geral os argumentos do comando test podem ser usados no extended"
+			   ;;
+                "sair")echo "Saindo..."
+			exit 0
+		esac
